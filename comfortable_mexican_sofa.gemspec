@@ -33,4 +33,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'codemirror-rails',  '>= 3.0.0'
   s.add_dependency 'bootstrap-sass',    '>= 3.2.0'
   s.add_dependency 'plupload-rails',    '>= 1.2.1'
+  s.add_dependency 'cloudinary',        '>= 1.1.7'
+  s.add_dependency 'attachinary',       '>= 1.3.1'
 end
