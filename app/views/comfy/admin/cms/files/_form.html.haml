@@ -1,7 +1,7 @@
 = render 'comfy/admin/cms/partials/file_form_before', :form => form
 
 = form.text_field :label
-= form.file_field :file
+= form.attachinary_file_field :file
 
 - unless @file.new_record?
   = form.form_group t('.current_file') do

@@ -22,3 +22,8 @@
 #= require comfy/admin/cms/uploader
 #= require comfy/admin/cms/files
 #= require comfy/admin/cms/custom
+#= require jquery.ui.widget
+#= require jquery.iframe-transport
+#= require jquery.fileupload
+#= require cloudinary/jquery.cloudinary
+#= require attachinary

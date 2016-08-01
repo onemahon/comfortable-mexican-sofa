@@ -5,6 +5,7 @@ window.CMS.code_mirror_instances = [ ]
 $(document).on 'page:load ready', ->
   window.CMS.current_path = window.location.pathname
   CMS.init()
+  $('.attachinary-input').attachinary()
 
 window.CMS.init = ->
   CMS.set_iframe_layout()

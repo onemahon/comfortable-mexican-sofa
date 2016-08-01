@@ -5,6 +5,7 @@
 
   = stylesheet_link_tag     'comfy/admin/cms/application', 'data-turbolinks-track' => true
   = javascript_include_tag  'comfy/admin/cms/application', 'data-turbolinks-track' => true
+  = cloudinary_js_config
 
   - if @site && @site.persisted?
     :javascript

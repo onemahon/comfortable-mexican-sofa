@@ -5,6 +5,9 @@ gemspec
 # apps can also use will_paginate so there's no dependency in gemspec
 gem 'kaminari'
 
+gem 'cloudinary'
+gem 'attachinary'
+
 group :development do
 
   gem 'awesome_print'

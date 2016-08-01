@@ -1,23 +1,13 @@
 class Comfy::Cms::File < ActiveRecord::Base
   self.table_name = 'comfy_cms_files'
 
-  IMAGE_MIMETYPES = %w(gif jpeg pjpeg png tiff).collect{|subtype| "image/#{subtype}"}
+  IMAGE_MIMETYPES = %w(gif jpeg png).collect{|subtype| "image/#{subtype}"}
 
   cms_is_categorized
 
   attr_accessor :dimensions
 
-  has_attached_file :file, ComfortableMexicanSofa.config.upload_file_options.merge(
-    # dimensions accessor needs to be set before file assignment for this to work
-    :styles => lambda { |f|
-      if f.respond_to?(:instance) && f.instance.respond_to?(:dimensions)
-        (f.instance.dimensions.blank?? { } : { :original => f.instance.dimensions }).merge(
-          :cms_thumb => '100x75#'
-        ).merge(ComfortableMexicanSofa.config.upload_file_options[:styles] || {})
-      end
-    }
-  )
-  before_post_process :is_image?
+  has_attachment  :file, accept: [:jpg, :png, :gif]
 
   # -- Relationships --------------------------------------------------------
   belongs_to :site
