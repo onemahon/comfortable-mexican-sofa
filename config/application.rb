@@ -6,8 +6,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups(assets: %w(development test)))
 
 module ComfortableMexicanSofa
-  require 'attachinary/orm/active_record'
-
   class Application < Rails::Application
     require_relative '../lib/comfortable_mexican_sofa'
 

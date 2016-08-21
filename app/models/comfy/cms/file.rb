@@ -1,4 +1,6 @@
 class Comfy::Cms::File < ActiveRecord::Base
+  require 'attachinary/orm/active_record'
+
   self.table_name = 'comfy_cms_files'
 
   IMAGE_MIMETYPES = %w(gif jpeg png).collect{|subtype| "image/#{subtype}"}
