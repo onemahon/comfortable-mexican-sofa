@@ -18,8 +18,6 @@ class Comfy::Cms::File < ActiveRecord::Base
   # -- Validations ----------------------------------------------------------
   validates :site_id,
     :presence   => true
-  validates_attachment_presence :file
-  do_not_validate_attachment_file_type :file
 
   validates :file_file_name,
     :uniqueness => {:scope => [:site_id, :block_id]}

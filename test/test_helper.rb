@@ -14,9 +14,6 @@ require 'rails/test_help'
 require 'rails/generators'
 require 'mocha/setup'
 
-# No need to add cache-busters in test environment
-Paperclip::Attachment.default_options[:use_timestamp] = false
-
 class ActiveSupport::TestCase
 
   include ActionDispatch::TestProcess
@@ -24,8 +21,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   setup :reset_config,
-        :reset_locale,
-        :stub_paperclip
+        :reset_locale
 
   # resetting default configuration
   def reset_config
@@ -99,12 +95,6 @@ class ActiveSupport::TestCase
   # Small method that allows for better formatting in tests
   def rendered_content_formatter(string)
     string.gsub(/^[ ]+/, '')
-  end
-
-  def stub_paperclip
-    Comfy::Cms::Block.any_instance.stubs(:save_attached_files).returns(true)
-    Comfy::Cms::Block.any_instance.stubs(:delete_attached_files).returns(true)
-    Paperclip::Attachment.any_instance.stubs(:post_process).returns(true)
   end
 
 end

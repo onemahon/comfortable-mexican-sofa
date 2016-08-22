@@ -20,12 +20,20 @@ Add gem definition to your Gemfile:
 
 ```ruby
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
+gem 'attachinary'
+```
+
+Add require to application.rb: (see https://github.com/assembler/attachinary#installation):
+
+```
+ require 'attachinary/orm/active_record'
 ```
 
 Then from the Rails project's root run:
 
     bundle install
     rails generate comfy:cms
+    rake attachinary:install:migrations
     rake db:migrate
 
 Now take a look inside your `config/routes.rb` file. You'll see where routes attach for the admin area and content serving. Make sure that content serving route appears as a very last item.

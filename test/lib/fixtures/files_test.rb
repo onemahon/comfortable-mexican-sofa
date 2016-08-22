@@ -89,8 +89,6 @@ class FixtureFilesTest < ActiveSupport::TestCase
     attr_path = File.join(host_path, 'files/_sample.jpg.yml')
     file_path = File.join(host_path, 'files/sample.jpg')
 
-    Paperclip::Attachment.any_instance.stubs(:path).
-      returns(File.join(Rails.root, 'db/cms_fixtures/sample-site/files/sample.jpg'))
     ComfortableMexicanSofa::Fixture::File::Exporter.new('default-site', 'test-site').export!
 
     assert File.exists?(attr_path)
