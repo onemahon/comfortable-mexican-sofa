@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'comfortable_mexican_sofa'
+require 'cloudinary'
 require 'rails'
 require 'rails-i18n'
 require 'bootstrap_form'
