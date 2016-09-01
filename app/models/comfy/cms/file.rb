@@ -1,3 +1,5 @@
+require 'paperclip-cloudinary'
+
 class Comfy::Cms::File < ActiveRecord::Base
   self.table_name = 'comfy_cms_files'
 

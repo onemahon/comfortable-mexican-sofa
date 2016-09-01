@@ -1,3 +1,5 @@
+require 'paperclip-cloudinary'
+
 class Comfy::Admin::Cms::FilesController < Comfy::Admin::Cms::BaseController
 
   include ActionView::Helpers::NumberHelper
