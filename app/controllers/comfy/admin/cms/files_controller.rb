@@ -1,4 +1,4 @@
-require 'paperclip-cloudinary'
+require 'paperclip/cloudinary'
 
 class Comfy::Admin::Cms::FilesController < Comfy::Admin::Cms::BaseController
 
